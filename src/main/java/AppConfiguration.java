@@ -82,10 +82,20 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
         return templateEngine;
     }
 
+//    @Bean
+//    public ThymeleafViewResolver viewResolver() {
+//        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+//        viewResolver.setTemplateEngine(templateEngine());
+//        return viewResolver;
+//    }
+
     @Bean
     public ThymeleafViewResolver viewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
+        viewResolver.setCharacterEncoding("UTF-8");
+        viewResolver.setForceContentType(true);
+        viewResolver.setContentType("text/html; charset=UTF-8");
         return viewResolver;
     }
 
